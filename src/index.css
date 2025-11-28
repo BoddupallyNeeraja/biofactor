@@ -4,18 +4,12 @@
   box-sizing: border-box;
 }
 
-html {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
 body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #333;
   background-color: #f9fafb;
-  overflow-x: hidden;
 }
 
 code {
@@ -23,16 +17,4 @@ code {
     monospace;
 }
 
-/* Ensure images are responsive */
-img {
-  max-width: 100%;
-  height: auto;
-}
 
-/* Touch-friendly button sizes on mobile */
-@media (max-width: 768px) {
-  button, a {
-    min-height: 44px;
-    min-width: 44px;
-  }
-}

@@ -321,16 +321,6 @@
 .product-features ul li {
   padding: 0.5rem 0;
   color: #666;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.product-features ul li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #2d5016;
-  font-weight: bold;
 }
 
 .related-products {
@@ -418,10 +408,6 @@
 }
 
 @media (max-width: 968px) {
-  .product-detail {
-    padding: 1.5rem;
-  }
-
   .detail-content {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -429,6 +415,7 @@
   }
 
   .image-wrapper {
+    font-size: 10rem;
     height: 300px;
   }
 
@@ -439,11 +426,6 @@
   .product-actions {
     flex-direction: column;
   }
-
-  .related-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
-  }
 }
 
 @media (max-width: 768px) {
@@ -451,223 +433,21 @@
     padding: 1rem;
   }
 
-  .back-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-  }
-
   .detail-content {
     padding: 1.5rem;
-    gap: 1.5rem;
   }
 
   .image-wrapper {
+    font-size: 8rem;
     height: 250px;
   }
 
-  .product-category {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.875rem;
-  }
-
   .product-title {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .product-description {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  .price-section {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 1rem 0;
-  }
-
-  .price-info {
-    width: 100%;
   }
 
   .product-price {
-    font-size: 1.75rem;
-  }
-
-  .stock-badge {
-    font-size: 0.85rem;
-  }
-
-  .quantity-section {
-    padding: 0.75rem 0;
-  }
-
-  .quantity-controls {
-    max-width: 180px;
-  }
-
-  .quantity-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 1.2rem;
-  }
-
-  .quantity-input {
-    width: 70px;
-    padding: 0.625rem;
-    font-size: 1rem;
-  }
-
-  .total-price-section {
-    padding: 1.25rem;
-  }
-
-  .price-row {
-    font-size: 0.95rem;
-    padding: 0.4rem 0;
-  }
-
-  .price-row.total {
-    font-size: 1.3rem;
-  }
-
-  .discount-info {
-    padding: 0.625rem;
-    font-size: 0.9rem;
-  }
-
-  .product-actions {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .add-to-cart-btn,
-  .buy-now-btn {
-    padding: 0.875rem 1.5rem;
-    font-size: 1rem;
-  }
-
-  .product-features h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .product-features ul li {
-    font-size: 0.9rem;
-    padding: 0.4rem 0;
-  }
-
-  .related-products {
-    margin-top: 2rem;
-  }
-
-  .related-products h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .related-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-  }
-
-  .related-card {
-    padding: 1rem;
-  }
-
-  .related-image {
-    min-height: 100px;
-    max-height: 100px;
-  }
-}
-
-@media (max-width: 480px) {
-  .product-detail {
-    padding: 0.75rem;
-  }
-
-  .back-button {
-    padding: 0.4rem 0.875rem;
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
-  }
-
-  .detail-content {
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  .image-wrapper {
-    height: 200px;
-  }
-
-  .product-title {
-    font-size: 1.25rem;
-  }
-
-  .product-description {
-    font-size: 0.9rem;
-  }
-
-  .product-price {
-    font-size: 1.5rem;
-  }
-
-  .quantity-controls {
-    max-width: 160px;
-  }
-
-  .quantity-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 1rem;
-  }
-
-  .quantity-input {
-    width: 60px;
-    font-size: 0.95rem;
-  }
-
-  .total-price-section {
-    padding: 1rem;
-  }
-
-  .price-row {
-    font-size: 0.9rem;
-  }
-
-  .price-row.total {
-    font-size: 1.2rem;
-  }
-
-  .add-to-cart-btn,
-  .buy-now-btn {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.95rem;
-  }
-
-  .related-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-
-  .related-card {
-    padding: 0.75rem;
-  }
-
-  .related-image {
-    min-height: 80px;
-    max-height: 80px;
-  }
-
-  .related-card h4 {
-    font-size: 0.9rem;
-  }
-
-  .related-price {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 }
 

@@ -134,9 +134,12 @@ const Cart = () => {
               </div>
             )}
 
-            <Link to="/checkout" className="checkout-btn">
+            <button 
+              className="checkout-btn"
+              onClick={() => alert('Checkout functionality will be implemented soon!')}
+            >
               Proceed to Checkout
-            </Link>
+            </button>
 
             <Link to="/products" className="continue-shopping-link">
               ← Continue Shopping

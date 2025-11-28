@@ -1,0 +1,330 @@
+.about-page {
+  min-height: calc(100vh - 300px);
+  background: linear-gradient(135deg, #f9fafb 0%, #f5f7fa 100%);
+  padding: 2rem 0;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero Section */
+.about-hero {
+  text-align: center;
+  padding: 4rem 0 3rem;
+  background: linear-gradient(135deg, #2d5016 0%, #3d6b1f 100%);
+  color: white;
+  border-radius: 20px;
+  margin-bottom: 3rem;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #a8e063;
+  font-weight: 500;
+}
+
+/* About Sections */
+.about-section {
+  background: white;
+  border-radius: 15px;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.about-section h2 {
+  color: #2d5016;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.section-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* Mission & Vision */
+.mission-vision {
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.mv-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mv-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.mv-card h3 {
+  color: #2d5016;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.mv-card p {
+  color: #666;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Products Overview */
+.products-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-category-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid #e8f5e9;
+  transition: all 0.3s ease;
+}
+
+.product-category-card:hover {
+  border-color: #2d5016;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.product-category-card h3 {
+  color: #2d5016;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.product-category-card p {
+  color: #666;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Technology Section */
+.technology {
+  background: linear-gradient(135deg, #2d5016 0%, #3d6b1f 100%);
+  color: white;
+}
+
+.technology h2 {
+  color: white;
+}
+
+.tech-content {
+  text-align: center;
+}
+
+.tech-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+.tech-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Values Section */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.value-item {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.value-item h4 {
+  color: #2d5016;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.value-item p {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Contact Section */
+.contact-section {
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-icon {
+  font-size: 2.5rem;
+}
+
+.contact-item h4 {
+  color: #2d5016;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+}
+
+.contact-item p {
+  color: #666;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.company-info {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  margin-top: 2rem;
+}
+
+.company-info p {
+  color: #2d5016;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.company-info p strong {
+  font-size: 1.3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .about-section {
+    padding: 2rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .mission-vision-grid,
+  .products-overview,
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 1rem 0;
+  }
+
+  .about-container {
+    padding: 0 1rem;
+  }
+
+  .about-hero {
+    padding: 3rem 1.5rem;
+    border-radius: 15px;
+  }
+
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .about-section {
+    padding: 1.5rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-content p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+}
+

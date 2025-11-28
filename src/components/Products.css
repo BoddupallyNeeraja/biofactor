@@ -210,13 +210,8 @@
 }
 
 @media (max-width: 968px) {
-  .products-page {
-    padding: 1.5rem;
-  }
-
   .products-container {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
 
   .products-sidebar {
@@ -234,128 +229,13 @@
     padding: 1rem;
   }
 
-  .page-header {
-    margin-bottom: 2rem;
-  }
-
   .page-header h1 {
-    font-size: 1.75rem;
-  }
-
-  .page-header p {
-    font-size: 1rem;
-  }
-
-  .products-sidebar {
-    padding: 1.5rem;
-  }
-
-  .filter-section {
-    margin-bottom: 1.5rem;
-  }
-
-  .filter-section h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .search-input {
-    padding: 0.625rem;
-    font-size: 0.95rem;
-  }
-
-  .category-btn {
-    padding: 0.625rem;
-    font-size: 0.9rem;
+    font-size: 2rem;
   }
 
   .products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
-  }
-
-  .product-card {
-    padding: 1rem;
-  }
-
-  .product-image {
-    min-height: 150px;
-    max-height: 150px;
-    margin-bottom: 0.75rem;
-  }
-
-  .product-name {
-    font-size: 1rem;
-  }
-
-  .product-category {
-    font-size: 0.85rem;
-  }
-
-  .product-price {
-    font-size: 1.3rem;
-  }
-
-  .quick-add-btn {
-    padding: 0.625rem;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .products-page {
-    padding: 0.75rem;
-  }
-
-  .page-header {
-    margin-bottom: 1.5rem;
-  }
-
-  .page-header h1 {
-    font-size: 1.5rem;
-  }
-
-  .page-header p {
-    font-size: 0.9rem;
-  }
-
-  .products-sidebar {
-    padding: 1rem;
-  }
-
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-
-  .product-card {
-    padding: 0.75rem;
-  }
-
-  .product-image {
-    min-height: 120px;
-    max-height: 120px;
-  }
-
-  .product-name {
-    font-size: 0.9rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .product-category {
-    font-size: 0.8rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .product-price {
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .quick-add-btn {
-    padding: 0.5rem;
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
   }
 }
 

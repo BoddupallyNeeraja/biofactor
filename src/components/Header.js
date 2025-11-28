@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getCurrentUser, logout } from '../utils/storage';
 import { useCart } from '../context/CartContext';
@@ -9,42 +9,26 @@ const Header = () => {
   const currentUser = getCurrentUser();
   const { getCartItemCount } = useCart();
   const cartItemCount = getCartItemCount();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
     navigate('/');
-    setMobileMenuOpen(false);
-  };
-
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
   };
 
   return (
     <header className="header">
       <div className="header-container">
-        <Link to="/" className="logo" onClick={closeMobileMenu}>
+        <Link to="/" className="logo">
           <h1>🌿 BIOFACTOR</h1>
         </Link>
         
-        {/* Mobile Menu Toggle */}
-        <button 
-          className="mobile-menu-toggle"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span className={mobileMenuOpen ? 'active' : ''}></span>
-          <span className={mobileMenuOpen ? 'active' : ''}></span>
-          <span className={mobileMenuOpen ? 'active' : ''}></span>
-        </button>
-        
-        <nav className={`nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-          <Link to="/" className="nav-link" onClick={closeMobileMenu}>Home</Link>
-          <Link to="/products" className="nav-link" onClick={closeMobileMenu}>Products</Link>
+        <nav className="nav">
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/products" className="nav-link">Products</Link>
+          <Link to="/about" className="nav-link">About Us</Link>
           
           {/* Cart Icon */}
-          <Link to="/cart" className="cart-icon-wrapper" onClick={closeMobileMenu}>
+          <Link to="/cart" className="cart-icon-wrapper">
             <svg className="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="9" cy="21" r="1"></circle>
               <circle cx="20" cy="21" r="1"></circle>
@@ -62,8 +46,8 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Link to="/login" className="nav-link" onClick={closeMobileMenu}>Login</Link>
-              <Link to="/signup" className="nav-link signup-link" onClick={closeMobileMenu}>Sign Up</Link>
+              <Link to="/login" className="nav-link">Login</Link>
+              <Link to="/signup" className="nav-link signup-link">Sign Up</Link>
             </>
           )}
         </nav>
