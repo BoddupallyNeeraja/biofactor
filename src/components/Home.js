@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
 import './Home.css';
 
 const Home = () => {
+  const [imageErrors, setImageErrors] = useState({});
+  
   // Show featured products from different categories
   const featuredProducts = [
     products.find(p => p.category === 'BIOFERTILIZERS'),
@@ -63,7 +65,15 @@ const Home = () => {
             {featuredProducts.map(product => (
               <Link to={`/products/${product.id}`} key={product.id} className="product-card">
                 <div className="product-image">
-                  <img src={product.image || '/images/placeholder.jpg'} alt={product.name} onError={(e) => { e.target.style.display = 'none'; }} />
+                  {imageErrors[product.id] ? (
+                    <div className="image-placeholder">No Image</div>
+                  ) : (
+                    <img 
+                      src={product.image || '/images/placeholder.jpg'} 
+                      alt={product.name} 
+                      onError={() => setImageErrors(prev => ({ ...prev, [product.id]: true }))} 
+                    />
+                  )}
                 </div>
                 <h3 className="product-name">{product.name}</h3>
                 <p className="product-price">₹{product.price}</p>

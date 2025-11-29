@@ -9,6 +9,7 @@ const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const { addToCart } = useCart();
   const [addedItems, setAddedItems] = useState({});
+  const [imageErrors, setImageErrors] = useState({});
 
   const handleQuickAdd = (e, product) => {
     e.preventDefault();
@@ -75,7 +76,15 @@ const Products = () => {
               {filteredProducts.map(product => (
                 <Link to={`/products/${product.id}`} key={product.id} className="product-card">
                   <div className="product-image">
-                    <img src={product.image || '/images/placeholder.jpg'} alt={product.name} onError={(e) => { e.target.style.display = 'none'; }} />
+                    {imageErrors[product.id] ? (
+                      <div className="image-placeholder">No Image</div>
+                    ) : (
+                      <img 
+                        src={product.image || '/images/placeholder.jpg'} 
+                        alt={product.name} 
+                        onError={() => setImageErrors(prev => ({ ...prev, [product.id]: true }))} 
+                      />
+                    )}
                   </div>
                   <div className="product-info">
                     <h3 className="product-name">{product.name}</h3>

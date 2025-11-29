@@ -63,6 +63,26 @@
   height: auto;
 }
 
+.image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #999;
+  font-size: 1.2rem;
+}
+
+.image-placeholder-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #999;
+  font-size: 0.9rem;
+}
+
 .product-details {
   display: flex;
   flex-direction: column;

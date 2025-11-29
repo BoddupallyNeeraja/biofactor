@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import { authenticateUser } from '../utils/storage';
 import './Auth.css';
 
 const Login = () => {
   const navigate = useNavigate();
-  const { signIn } = useAuth();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -21,7 +20,7 @@ const Login = () => {
     setError('');
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
@@ -33,12 +32,15 @@ const Login = () => {
       return;
     }
 
-    // Sign in with Supabase
-    const result = await signIn(formData.email, formData.password);
+    // Authenticate user
+    const result = authenticateUser(formData.email, formData.password);
     
     if (result.success) {
       // Redirect to home page after successful login
-      navigate('/');
+      setTimeout(() => {
+        navigate('/');
+        window.location.reload(); // Refresh to update header
+      }, 500);
     } else {
       setError(result.message);
       setLoading(false);
@@ -94,3 +96,5 @@ const Login = () => {
 };
 
 export default Login;
+
+

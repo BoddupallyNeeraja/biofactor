@@ -11,6 +11,8 @@ const ProductDetail = () => {
   const product = products.find(p => p.id === parseInt(id));
   const [quantity, setQuantity] = useState(1);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  const [relatedImageErrors, setRelatedImageErrors] = useState({});
 
   if (!product) {
     return (
@@ -54,7 +56,15 @@ const ProductDetail = () => {
         <div className="detail-content">
           <div className="product-image-large">
             <div className="image-wrapper">
-              <img src={product.image || '/images/placeholder.jpg'} alt={product.name} onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:#999;">No Image</div>'; }} />
+              {imageError ? (
+                <div className="image-placeholder">No Image</div>
+              ) : (
+                <img 
+                  src={product.image || '/images/placeholder.jpg'} 
+                  alt={product.name} 
+                  onError={() => setImageError(true)} 
+                />
+              )}
             </div>
           </div>
 
@@ -177,7 +187,15 @@ const ProductDetail = () => {
                   className="related-card"
                 >
                   <div className="related-image">
-                    <img src={relatedProduct.image || '/images/placeholder.jpg'} alt={relatedProduct.name} onError={(e) => { e.target.style.display = 'none'; }} />
+                    {relatedImageErrors[relatedProduct.id] ? (
+                      <div className="image-placeholder-small">No Image</div>
+                    ) : (
+                      <img 
+                        src={relatedProduct.image || '/images/placeholder.jpg'} 
+                        alt={relatedProduct.name} 
+                        onError={() => setRelatedImageErrors(prev => ({ ...prev, [relatedProduct.id]: true }))} 
+                      />
+                    )}
                   </div>
                   <h4>{relatedProduct.name}</h4>
                   <p className="related-price">₹{relatedProduct.price}</p>

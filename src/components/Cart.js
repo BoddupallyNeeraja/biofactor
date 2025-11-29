@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import './Cart.css';
 
 const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity, clearCart, getCartTotal } = useCart();
+  const [imageErrors, setImageErrors] = useState({});
 
   const handleQuantityChange = (productId, newQuantity) => {
     updateQuantity(productId, newQuantity);
@@ -59,14 +60,15 @@ const Cart = () => {
             {cartItems.map(item => (
               <div key={item.id} className="cart-item">
                 <div className="cart-item-image">
-                  <img 
-                    src={item.image || '/images/placeholder.jpg'} 
-                    alt={item.name}
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.parentElement.innerHTML = '<div class="placeholder-img">No Image</div>';
-                    }}
-                  />
+                  {imageErrors[item.id] ? (
+                    <div className="placeholder-img">No Image</div>
+                  ) : (
+                    <img 
+                      src={item.image || '/images/placeholder.jpg'} 
+                      alt={item.name}
+                      onError={() => setImageErrors(prev => ({ ...prev, [item.id]: true }))}
+                    />
+                  )}
                 </div>
                 
                 <div className="cart-item-details">
