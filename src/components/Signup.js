@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { saveUser } from '../utils/storage';
+import { useAuth } from '../context/AuthContext';
 import './Auth.css';
 
 const Signup = () => {
   const navigate = useNavigate();
+  const { signUp } = useAuth();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,7 +25,7 @@ const Signup = () => {
     setSuccess('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
@@ -49,24 +50,29 @@ const Signup = () => {
       return;
     }
 
-    // Save user data
-    const userData = {
-      id: Date.now(),
-      name: formData.name,
-      email: formData.email,
-      password: formData.password,
-      createdAt: new Date().toISOString()
-    };
-
-    const result = saveUser(userData);
-    
-    if (result.success) {
-      setSuccess(result.message);
-      setTimeout(() => {
-        navigate('/login');
-      }, 1500);
-    } else {
-      setError(result.message);
+    // Sign up with Supabase Auth
+    try {
+      const result = await signUp(formData.email, formData.password, formData.name);
+      
+      if (result.success) {
+        setSuccess('Account created successfully! Please check your email to verify your account.');
+        setTimeout(() => {
+          navigate('/login');
+        }, 2000);
+      } else {
+        // Handle specific error messages
+        let errorMessage = result.error || 'Failed to create account. Please try again.';
+        if (errorMessage.includes('already registered')) {
+          errorMessage = 'User with this email already exists';
+        } else if (errorMessage.includes('Password')) {
+          errorMessage = 'Password does not meet requirements';
+        }
+        setError(errorMessage);
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error('Error during signup:', error);
+      setError('An unexpected error occurred. Please try again.');
       setLoading(false);
     }
   };

@@ -1,4 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
+import { supabase } from '../utils/supabaseClient';
+import { useAuth } from './AuthContext';
 
 const CartContext = createContext();
 
@@ -11,24 +13,80 @@ export const useCart = () => {
 };
 
 export const CartProvider = ({ children }) => {
+  const { user } = useAuth();
   const [cartItems, setCartItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Load cart from localStorage on mount
+  // Load cart from Supabase on mount or when user changes
   useEffect(() => {
-    const savedCart = localStorage.getItem('biofactor_cart');
-    if (savedCart) {
+    const loadCart = async () => {
       try {
-        setCartItems(JSON.parse(savedCart));
-      } catch (error) {
-        console.error('Error loading cart from localStorage:', error);
-      }
-    }
-  }, []);
+        if (user) {
+          // Load cart from Supabase for logged-in user
+          const { data, error } = await supabase
+            .from('carts')
+            .select('cart_items')
+            .eq('user_id', user.id)
+            .single();
 
-  // Save cart to localStorage whenever it changes
+          if (error && error.code !== 'PGRST116') { // PGRST116 = no rows returned
+            console.error('Error loading cart from Supabase:', error);
+          } else if (data && data.cart_items) {
+            setCartItems(data.cart_items);
+          }
+        } else {
+          // For guest users, try to load from sessionStorage as fallback
+          const savedCart = sessionStorage.getItem('biofactor_cart');
+          if (savedCart) {
+            try {
+              setCartItems(JSON.parse(savedCart));
+            } catch (error) {
+              console.error('Error parsing cart from sessionStorage:', error);
+            }
+          }
+        }
+      } catch (error) {
+        console.error('Error loading cart:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadCart();
+  }, [user]);
+
+  // Save cart to Supabase whenever it changes
   useEffect(() => {
-    localStorage.setItem('biofactor_cart', JSON.stringify(cartItems));
-  }, [cartItems]);
+    if (loading) return; // Don't save on initial load
+
+    const saveCart = async () => {
+      try {
+        if (user) {
+          // Save to Supabase for logged-in user
+          const { error } = await supabase
+            .from('carts')
+            .upsert({
+              user_id: user.id,
+              cart_items: cartItems,
+              updated_at: new Date().toISOString()
+            }, {
+              onConflict: 'user_id'
+            });
+
+          if (error) {
+            console.error('Error saving cart to Supabase:', error);
+          }
+        } else {
+          // For guest users, save to sessionStorage as fallback
+          sessionStorage.setItem('biofactor_cart', JSON.stringify(cartItems));
+        }
+      } catch (error) {
+        console.error('Error saving cart:', error);
+      }
+    };
+
+    saveCart();
+  }, [cartItems, loading]);
 
   const addToCart = (product, quantity = 1) => {
     setCartItems(prevItems => {
@@ -64,9 +122,25 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  const clearCart = () => {
+  const clearCart = async () => {
     setCartItems([]);
-    localStorage.removeItem('biofactor_cart');
+    
+    try {
+      if (user) {
+        const { error } = await supabase
+          .from('carts')
+          .delete()
+          .eq('user_id', user.id);
+
+        if (error) {
+          console.error('Error clearing cart from Supabase:', error);
+        }
+      } else {
+        sessionStorage.removeItem('biofactor_cart');
+      }
+    } catch (error) {
+      console.error('Error clearing cart:', error);
+    }
   };
 
   const getCartItemCount = () => {
@@ -84,7 +158,8 @@ export const CartProvider = ({ children }) => {
     updateQuantity,
     clearCart,
     getCartItemCount,
-    getCartTotal
+    getCartTotal,
+    loading
   };
 
   return (
@@ -93,4 +168,3 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
-

@@ -219,13 +219,24 @@
   font-size: 1.1rem;
 }
 
+/* Tablet and below */
 @media (max-width: 968px) {
+  .products-page {
+    padding: 1.5rem;
+  }
+
   .products-container {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .products-sidebar {
     position: static;
+    padding: 1.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.2rem;
   }
 
   .products-grid {
@@ -234,18 +245,141 @@
   }
 }
 
+/* Mobile devices */
 @media (max-width: 768px) {
   .products-page {
     padding: 1rem;
+  }
+
+  .page-header {
+    margin-bottom: 2rem;
   }
 
   .page-header h1 {
     font-size: 2rem;
   }
 
+  .page-header p {
+    font-size: 1rem;
+  }
+
+  .products-container {
+    gap: 1rem;
+  }
+
+  .products-sidebar {
+    padding: 1.25rem;
+  }
+
+  .filter-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .search-input {
+    padding: 0.625rem;
+    font-size: 0.95rem;
+  }
+
+  .category-btn {
+    padding: 0.625rem;
+    font-size: 0.9rem;
+  }
+
   .products-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
+  }
+
+  .product-card {
+    padding: 1.25rem;
+  }
+
+  .product-image {
+    min-height: 180px;
+    max-height: 180px;
+  }
+
+  .product-name {
+    font-size: 1.1rem;
+  }
+
+  .product-price {
+    font-size: 1.3rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .products-page {
+    padding: 0.75rem;
+  }
+
+  .page-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .page-header p {
+    font-size: 0.9rem;
+  }
+
+  .products-sidebar {
+    padding: 1rem;
+  }
+
+  .filter-section h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .search-input {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .category-btn {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .product-card {
+    padding: 1rem;
+  }
+
+  .product-image {
+    min-height: 150px;
+    max-height: 150px;
+    margin-bottom: 0.75rem;
+  }
+
+  .product-name {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .product-category {
+    font-size: 0.85rem;
+  }
+
+  .product-price {
+    font-size: 1.2rem;
+  }
+
+  .quick-add-btn {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.85rem;
   }
 }
 

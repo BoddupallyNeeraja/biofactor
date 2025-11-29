@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import './Cart.css';
 
 const Cart = () => {
+  const navigate = useNavigate();
   const { cartItems, removeFromCart, updateQuantity, clearCart, getCartTotal } = useCart();
   const [imageErrors, setImageErrors] = useState({});
 
@@ -138,7 +139,7 @@ const Cart = () => {
 
             <button 
               className="checkout-btn"
-              onClick={() => alert('Checkout functionality will be implemented soon!')}
+              onClick={() => navigate('/checkout')}
             >
               Proceed to Checkout
             </button>

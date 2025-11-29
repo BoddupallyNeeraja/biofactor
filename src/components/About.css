@@ -263,8 +263,20 @@
   font-size: 1.3rem;
 }
 
-/* Responsive Design */
+/* Tablet and below */
 @media (max-width: 968px) {
+  .about-page {
+    padding: 1.5rem 0;
+  }
+
+  .about-container {
+    padding: 0 1.5rem;
+  }
+
+  .about-hero {
+    padding: 3.5rem 2rem;
+  }
+
   .about-hero h1 {
     font-size: 2.5rem;
   }
@@ -285,9 +297,22 @@
   .products-overview,
   .values-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mv-card,
+  .product-category-card,
+  .value-item {
+    padding: 1.75rem;
+  }
+
+  .contact-info {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
   }
 }
 
+/* Mobile devices */
 @media (max-width: 768px) {
   .about-page {
     padding: 1rem 0;
@@ -300,6 +325,7 @@
   .about-hero {
     padding: 3rem 1.5rem;
     border-radius: 15px;
+    margin-bottom: 2rem;
   }
 
   .about-hero h1 {
@@ -312,19 +338,229 @@
 
   .about-section {
     padding: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .about-section h2 {
     font-size: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .section-content p {
     font-size: 1rem;
     text-align: left;
+    line-height: 1.7;
+  }
+
+  .mission-vision-grid,
+  .products-overview,
+  .values-grid {
+    gap: 1.25rem;
+  }
+
+  .mv-card {
+    padding: 1.5rem;
+  }
+
+  .mv-icon {
+    font-size: 2.5rem;
+  }
+
+  .mv-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .mv-card p {
+    font-size: 0.95rem;
+  }
+
+  .product-category-card {
+    padding: 1.5rem;
+  }
+
+  .product-category-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .product-category-card p {
+    font-size: 0.95rem;
+  }
+
+  .tech-badge {
+    padding: 0.875rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .tech-content p {
+    font-size: 1rem;
+  }
+
+  .values-grid {
+    gap: 1.25rem;
+  }
+
+  .value-item {
+    padding: 1.5rem;
+  }
+
+  .value-icon {
+    font-size: 2.5rem;
+  }
+
+  .value-item h4 {
+    font-size: 1.1rem;
+  }
+
+  .value-item p {
+    font-size: 0.9rem;
   }
 
   .contact-info {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .contact-item {
+    padding: 1.25rem;
+  }
+
+  .contact-icon {
+    font-size: 2rem;
+  }
+
+  .contact-item h4 {
+    font-size: 1rem;
+  }
+
+  .contact-item p {
+    font-size: 0.95rem;
+  }
+
+  .company-info {
+    padding: 1.5rem;
+  }
+
+  .company-info p {
+    font-size: 1rem;
+  }
+
+  .company-info p strong {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .about-page {
+    padding: 0.75rem 0;
+  }
+
+  .about-container {
+    padding: 0 0.75rem;
+  }
+
+  .about-hero {
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .about-section {
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .mission-vision-grid,
+  .products-overview,
+  .values-grid {
+    gap: 1rem;
+  }
+
+  .mv-card,
+  .product-category-card,
+  .value-item {
+    padding: 1.25rem;
+  }
+
+  .mv-icon,
+  .value-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .mv-card h3,
+  .product-category-card h3,
+  .value-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .mv-card p,
+  .product-category-card p,
+  .value-item p {
+    font-size: 0.9rem;
+  }
+
+  .tech-badge {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-content p {
+    font-size: 0.95rem;
+  }
+
+  .contact-info {
+    gap: 1rem;
+  }
+
+  .contact-item {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-icon {
+    font-size: 1.75rem;
+  }
+
+  .contact-item h4 {
+    font-size: 0.95rem;
+  }
+
+  .contact-item p {
+    font-size: 0.9rem;
+  }
+
+  .company-info {
+    padding: 1.25rem;
+  }
+
+  .company-info p {
+    font-size: 0.95rem;
+  }
+
+  .company-info p strong {
+    font-size: 1.1rem;
   }
 }
 

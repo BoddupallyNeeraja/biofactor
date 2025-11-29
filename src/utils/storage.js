@@ -1,42 +1,58 @@
-// Utility functions for localStorage management
+// Utility functions for Supabase storage management
+import { supabase } from './supabaseClient';
 
-export const saveUser = (userData) => {
-  const users = getUsers();
-  const userExists = users.find(user => user.email === userData.email);
-  
-  if (userExists) {
-    return { success: false, message: 'User with this email already exists' };
+// Get current user from Supabase Auth
+export const getCurrentUser = async () => {
+  try {
+    const { data: { user } } = await supabase.auth.getUser();
+    if (user) {
+      // Get user metadata (name) from auth metadata
+      return {
+        id: user.id,
+        email: user.email,
+        name: user.user_metadata?.name || user.email?.split('@')[0] || 'User',
+      };
+    }
+    return null;
+  } catch (error) {
+    console.error('Error getting current user:', error);
+    return null;
   }
-  
-  users.push(userData);
-  localStorage.setItem('biofactor_users', JSON.stringify(users));
-  return { success: true, message: 'Account created successfully!' };
 };
 
-export const getUsers = () => {
-  const users = localStorage.getItem('biofactor_users');
-  return users ? JSON.parse(users) : [];
+// Get current user synchronously (for components that need immediate access)
+export const getCurrentUserSync = () => {
+  // This will be handled by AuthContext, but keeping for backward compatibility
+  return null;
 };
 
-export const authenticateUser = (email, password) => {
-  const users = getUsers();
-  const user = users.find(u => u.email === email && u.password === password);
-  
-  if (user) {
-    localStorage.setItem('biofactor_currentUser', JSON.stringify(user));
-    return { success: true, user };
+// Logout function (now handled by AuthContext)
+export const logout = async () => {
+  try {
+    const { error } = await supabase.auth.signOut();
+    if (error) throw error;
+    return { success: true };
+  } catch (error) {
+    console.error('Error logging out:', error);
+    return { success: false, error: error.message };
   }
-  
-  return { success: false, message: 'Invalid email or password' };
 };
 
-export const getCurrentUser = () => {
-  const user = localStorage.getItem('biofactor_currentUser');
-  return user ? JSON.parse(user) : null;
+// Legacy functions for backward compatibility (deprecated - use AuthContext instead)
+export const saveUser = async (userData) => {
+  // This is now handled by Supabase Auth signup
+  console.warn('saveUser is deprecated. Use AuthContext signUp instead.');
+  return { success: false, message: 'Use AuthContext signUp method' };
 };
 
-export const logout = () => {
-  localStorage.removeItem('biofactor_currentUser');
+export const getUsers = async () => {
+  // This function is no longer needed with Supabase Auth
+  console.warn('getUsers is deprecated. User management is handled by Supabase Auth.');
+  return [];
 };
 
-
+export const authenticateUser = async (email, password) => {
+  // This is now handled by Supabase Auth signin
+  console.warn('authenticateUser is deprecated. Use AuthContext signIn instead.');
+  return { success: false, message: 'Use AuthContext signIn method' };
+};

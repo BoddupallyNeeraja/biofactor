@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
@@ -13,6 +13,15 @@ const ProductDetail = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [imageError, setImageError] = useState(false);
   const [relatedImageErrors, setRelatedImageErrors] = useState({});
+
+  // Scroll to top when product changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, [id]);
 
   if (!product) {
     return (
@@ -180,12 +189,23 @@ const ProductDetail = () => {
             {products
               .filter(p => p.category === product.category && p.id !== product.id)
               .slice(0, 3)
-              .map(relatedProduct => (
-                <Link
-                  to={`/products/${relatedProduct.id}`}
-                  key={relatedProduct.id}
-                  className="related-card"
-                >
+              .map(relatedProduct => {
+                const handleRelatedProductClick = (e) => {
+                  // Scroll to top immediately when clicking related product
+                  window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'instant' // Use instant for immediate scroll, then smooth scroll happens on route change
+                  });
+                };
+
+                return (
+                  <Link
+                    to={`/products/${relatedProduct.id}`}
+                    key={relatedProduct.id}
+                    className="related-card"
+                    onClick={handleRelatedProductClick}
+                  >
                   <div className="related-image">
                     {relatedImageErrors[relatedProduct.id] ? (
                       <div className="image-placeholder-small">No Image</div>
@@ -199,8 +219,10 @@ const ProductDetail = () => {
                   </div>
                   <h4>{relatedProduct.name}</h4>
                   <p className="related-price">₹{relatedProduct.price}</p>
-                </Link>
-              ))}
+                  <span className="view-details-text">View Details →</span>
+                  </Link>
+                );
+              })}
           </div>
         </div>
       </div>

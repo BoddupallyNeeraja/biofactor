@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { authenticateUser } from '../utils/storage';
+import { useAuth } from '../context/AuthContext';
 import './Auth.css';
 
 const Login = () => {
   const navigate = useNavigate();
+  const { signIn } = useAuth();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -20,7 +21,7 @@ const Login = () => {
     setError('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
@@ -32,17 +33,27 @@ const Login = () => {
       return;
     }
 
-    // Authenticate user
-    const result = authenticateUser(formData.email, formData.password);
-    
-    if (result.success) {
-      // Redirect to home page after successful login
-      setTimeout(() => {
+    try {
+      // Sign in with Supabase Auth
+      const result = await signIn(formData.email, formData.password);
+      
+      if (result.success) {
+        // Redirect to home page after successful login
         navigate('/');
-        window.location.reload(); // Refresh to update header
-      }, 500);
-    } else {
-      setError(result.message);
+      } else {
+        // Handle specific error messages
+        let errorMessage = result.error || 'Invalid email or password';
+        if (errorMessage.includes('Invalid login credentials')) {
+          errorMessage = 'Invalid email or password';
+        } else if (errorMessage.includes('Email not confirmed')) {
+          errorMessage = 'Please verify your email before logging in';
+        }
+        setError(errorMessage);
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      setError('An unexpected error occurred. Please try again.');
       setLoading(false);
     }
   };
