@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { saveUser } from '../utils/storage';
+import { useAuth } from '../context/AuthContext';
 import './Auth.css';
 
 const Signup = () => {
   const navigate = useNavigate();
+  const { signUp } = useAuth();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,7 +25,7 @@ const Signup = () => {
     setSuccess('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
@@ -49,24 +50,16 @@ const Signup = () => {
       return;
     }
 
-    // Save user data
-    const userData = {
-      id: Date.now(),
-      name: formData.name,
-      email: formData.email,
-      password: formData.password,
-      createdAt: new Date().toISOString()
-    };
-
-    const result = saveUser(userData);
+    // Sign up with Supabase
+    const result = await signUp(formData.email, formData.password, formData.name);
     
     if (result.success) {
-      setSuccess(result.message);
+      setSuccess(result.message || 'Account created successfully! Please check your email to verify your account.');
       setTimeout(() => {
         navigate('/login');
-      }, 1500);
+      }, 2000);
     } else {
-      setError(result.message);
+      setError(result.message || 'Error creating account. Please try again.');
       setLoading(false);
     }
   };
@@ -147,5 +140,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-

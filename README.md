@@ -5,11 +5,11 @@ A modern, responsive ecommerce website for organic products built with React.
 ## Features
 
 - 🛍️ **Product Catalog** - Browse through a wide range of organic products
-- 🔐 **User Authentication** - Sign up and login functionality with localStorage
+- 🔐 **User Authentication** - Sign up and login functionality with Supabase
 - 🎨 **Modern UI** - Beautiful, responsive design with smooth animations
 - 🔍 **Product Search** - Search and filter products by category
 - 📱 **Mobile Responsive** - Works perfectly on all devices
-- 🛒 **Product Details** - Detailed product pages with related products
+- 🛒 **Shopping Cart** - Add products to cart with quantity management
 
 ## Getting Started
 
@@ -17,6 +17,7 @@ A modern, responsive ecommerce website for organic products built with React.
 
 - Node.js (v14 or higher)
 - npm or yarn
+- Supabase account (free tier works fine)
 
 ### Installation
 
@@ -25,12 +26,22 @@ A modern, responsive ecommerce website for organic products built with React.
 npm install
 ```
 
-2. Start the development server:
+2. Set up Supabase:
+   - Create a project at [https://app.supabase.com](https://app.supabase.com)
+   - Get your project URL and anon key from Settings → API
+   - Create a `.env` file in the root directory:
+     ```env
+     REACT_APP_SUPABASE_URL=your_supabase_project_url
+     REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
+     ```
+   - See [SUPABASE_SETUP.md](SUPABASE_SETUP.md) for detailed instructions
+
+3. Start the development server:
 ```bash
 npm start
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Project Structure
 
@@ -50,6 +61,11 @@ biofactor-project/
 │   │   └── *.css
 │   ├── data/
 │   │   └── products.js
+│   ├── context/
+│   │   ├── AuthContext.js
+│   │   └── CartContext.js
+│   ├── lib/
+│   │   └── supabase.js
 │   ├── utils/
 │   │   └── storage.js
 │   ├── App.js
@@ -60,17 +76,16 @@ biofactor-project/
 └── README.md
 ```
 
-## User Data Storage
+## Authentication & Data Storage
 
-The application uses **localStorage** to store user registration and login data:
-- User accounts are stored in `biofactor_users` key
-- Current logged-in user is stored in `biofactor_currentUser` key
-- Data persists across browser sessions
+The application uses **Supabase** for user authentication:
+- User accounts are securely stored in Supabase Auth
+- Sessions are automatically managed by Supabase
+- Cart data is stored in browser localStorage (can be synced to Supabase)
+- All authentication is handled securely through Supabase's infrastructure
 
-### To view stored data:
-1. Open browser DevTools (F12)
-2. Go to Application tab → Local Storage
-3. Check `biofactor_users` for all registered users
+### Supabase Setup
+See [SUPABASE_SETUP.md](SUPABASE_SETUP.md) for detailed setup instructions.
 
 ## Available Scripts
 
@@ -82,16 +97,19 @@ The application uses **localStorage** to store user registration and login data:
 
 - React 18.2.0
 - React Router DOM 6.20.0
+- Supabase (Authentication & Backend)
+- @supabase/supabase-js 2.39.0
 - CSS3 (Custom styling)
-- localStorage (Data persistence)
+- localStorage (Cart persistence)
 
 ## Features Breakdown
 
 ### Authentication
-- User signup with validation
-- User login with authentication
-- Session management with localStorage
-- Protected routes (ready for implementation)
+- User signup with email validation
+- User login with Supabase Auth
+- Secure session management
+- Email verification support
+- Automatic session persistence
 
 ### Products
 - Product listing page with search and filter
@@ -107,10 +125,11 @@ The application uses **localStorage** to store user registration and login data:
 
 ## Notes
 
-- This is a **frontend-only** application
-- User data is stored in browser localStorage
-- Product data is static (can be connected to a backend API)
-- Cart functionality is UI-only (can be extended)
+- Authentication is handled by **Supabase** (backend-as-a-service)
+- User data is securely stored in Supabase Auth
+- Product data is static (can be moved to Supabase database)
+- Cart data is stored in localStorage (can be synced to Supabase)
+- Requires `.env` file with Supabase credentials to run
 
 ## Future Enhancements
 

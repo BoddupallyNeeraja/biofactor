@@ -1,19 +1,21 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { getCurrentUser, logout } from '../utils/storage';
+import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import './Header.css';
 
 const Header = () => {
   const navigate = useNavigate();
-  const currentUser = getCurrentUser();
+  const { user, signOut, getUserProfile } = useAuth();
   const { getCartItemCount } = useCart();
   const cartItemCount = getCartItemCount();
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await signOut();
     navigate('/');
   };
+
+  const userName = getUserProfile();
 
   return (
     <header className="header">
@@ -39,9 +41,9 @@ const Header = () => {
             )}
           </Link>
 
-          {currentUser ? (
+          {user ? (
             <>
-              <span className="nav-link welcome">Welcome, {currentUser.name}!</span>
+              <span className="nav-link welcome">Welcome, {userName || user.email}!</span>
               <button onClick={handleLogout} className="nav-link logout-btn">Logout</button>
             </>
           ) : (
