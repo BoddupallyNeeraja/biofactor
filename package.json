@@ -4,11 +4,11 @@
   "description": "Organic Products Ecommerce Store - BIOFACTOR",
   "private": true,
   "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0",
-    "react-scripts": "5.0.1",
-    "@supabase/supabase-js": "^2.39.0"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,7 +32,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "jimp": "^1.6.0",
+    "sharp": "^0.34.5"
   }
 }
-
-
