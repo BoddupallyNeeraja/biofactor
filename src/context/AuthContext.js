@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
     return () => subscription.unsubscribe();
   }, []);
 
-  const signUp = async (email, password, name) => {
+  const signUp = async (email, password, name, userType = 'formal') => {
     try {
       const { data, error } = await supabase.auth.signUp({
         email,
@@ -41,6 +41,7 @@ export const AuthProvider = ({ children }) => {
         options: {
           data: {
             name: name,
+            user_type: userType,
           },
         },
       });
@@ -53,7 +54,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const signIn = async (email, password) => {
+  const signIn = async (email, password, userType = 'formal') => {
     try {
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
@@ -61,6 +62,46 @@ export const AuthProvider = ({ children }) => {
       });
 
       if (error) throw error;
+
+      // Update or insert user_type in profiles table after successful login
+      if (data.user) {
+        // First check if profile exists
+        const { data: profileData } = await supabase
+          .from('profiles')
+          .select('id')
+          .eq('id', data.user.id)
+          .single();
+
+        if (profileData) {
+          // Profile exists, update it
+          const { error: updateError } = await supabase
+            .from('profiles')
+            .update({ user_type: userType, updated_at: new Date().toISOString() })
+            .eq('id', data.user.id);
+
+          if (updateError) {
+            console.error('Error updating user type:', updateError);
+            // Don't fail the login if profile update fails
+          }
+        } else {
+          // Profile doesn't exist, create it
+          const { error: insertError } = await supabase
+            .from('profiles')
+            .insert({
+              id: data.user.id,
+              name: data.user.user_metadata?.name || data.user.email?.split('@')[0] || 'User',
+              user_type: userType,
+              created_at: new Date().toISOString(),
+              updated_at: new Date().toISOString()
+            });
+
+          if (insertError) {
+            console.error('Error creating profile:', insertError);
+            // Don't fail the login if profile creation fails
+          }
+        }
+      }
+
       return { success: true, data, error: null };
     } catch (error) {
       console.error('Error signing in:', error);

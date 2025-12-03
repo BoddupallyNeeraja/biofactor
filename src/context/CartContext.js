@@ -36,7 +36,7 @@ export const CartProvider = ({ children }) => {
           }
         } else {
           // For guest users, try to load from sessionStorage as fallback
-          const savedCart = sessionStorage.getItem('biofactor_cart');
+          const savedCart = sessionStorage.getItem('onehealthcenter_cart');
           if (savedCart) {
             try {
               setCartItems(JSON.parse(savedCart));
@@ -78,7 +78,7 @@ export const CartProvider = ({ children }) => {
           }
         } else {
           // For guest users, save to sessionStorage as fallback
-          sessionStorage.setItem('biofactor_cart', JSON.stringify(cartItems));
+          sessionStorage.setItem('onehealthcenter_cart', JSON.stringify(cartItems));
         }
       } catch (error) {
         console.error('Error saving cart:', error);
@@ -136,7 +136,7 @@ export const CartProvider = ({ children }) => {
           console.error('Error clearing cart from Supabase:', error);
         }
       } else {
-        sessionStorage.removeItem('biofactor_cart');
+        sessionStorage.removeItem('onehealthcenter_cart');
       }
     } catch (error) {
       console.error('Error clearing cart:', error);

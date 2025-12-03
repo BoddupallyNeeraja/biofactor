@@ -3,13 +3,12 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import './Auth.css';
 
-const Login = () => {
+const DealerLogin = () => {
   const navigate = useNavigate();
   const { signIn } = useAuth();
   const [formData, setFormData] = useState({
     email: '',
-    password: '',
-    userType: 'formal'
+    password: ''
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -28,7 +27,7 @@ const Login = () => {
     setError('');
 
     // Validation
-    if (!formData.email || !formData.password || !formData.userType) {
+    if (!formData.email || !formData.password) {
       setError('Please fill in all fields');
       setLoading(false);
       return;
@@ -36,7 +35,7 @@ const Login = () => {
 
     try {
       // Sign in with Supabase Auth
-      const result = await signIn(formData.email, formData.password, formData.userType);
+      const result = await signIn(formData.email, formData.password);
       
       if (result.success) {
         // Redirect to home page after successful login
@@ -61,22 +60,22 @@ const Login = () => {
 
   return (
     <div className="auth-container">
-      <div className="auth-card">
-        <h2>Welcome Back!</h2>
-        <p className="auth-subtitle">Login to your One Health Center account</p>
+      <div className="auth-card" style={{ borderTop: '4px solid #ff9800' }}>
+        <h2 style={{ color: '#ff9800' }}>Dealer Login</h2>
+        <p className="auth-subtitle">Access your dealer portal</p>
         
         {error && <div className="error-message">{error}</div>}
         
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
-            <label htmlFor="email">Email Address</label>
+            <label htmlFor="email">Dealer Email</label>
             <input
               type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="your.email@example.com"
+              placeholder="dealer@example.com"
               required
             />
           </div>
@@ -94,35 +93,25 @@ const Login = () => {
             />
           </div>
           
-          <div className="form-group">
-            <label htmlFor="userType">User Type</label>
-            <select
-              id="userType"
-              name="userType"
-              value={formData.userType}
-              onChange={handleChange}
-              className="form-select"
-              required
-            >
-              <option value="formal">Formal User</option>
-              <option value="dealer">Dealer</option>
-              <option value="admin">Admin</option>
-            </select>
-          </div>
-          
-          <button type="submit" className="auth-button" disabled={loading}>
-            {loading ? 'Logging in...' : 'Login'}
+          <button 
+            type="submit" 
+            className="auth-button" 
+            disabled={loading}
+            style={{ 
+              background: 'linear-gradient(135deg, #ff9800 0%, #f57c00 100%)' 
+            }}
+          >
+            {loading ? 'Logging in...' : 'Login as Dealer'}
           </button>
         </form>
         
         <p className="auth-footer">
-          Don't have an account? <Link to="/signup">Sign up here</Link>
+          <Link to="/login/formal">Regular User Login</Link> | <Link to="/login/admin">Admin Login</Link>
         </p>
       </div>
     </div>
   );
 };
 
-export default Login;
-
+export default DealerLogin;
 

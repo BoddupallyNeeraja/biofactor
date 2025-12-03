@@ -7,7 +7,7 @@ const About = () => {
       <div className="about-container">
         {/* Hero Section */}
         <section className="about-hero">
-          <h1>About BIOFACTOR</h1>
+          <h1>About One Health Center</h1>
           <p className="hero-subtitle">Transforming Agriculture Through Innovation</p>
         </section>
 
@@ -16,7 +16,7 @@ const About = () => {
           <div className="section-content">
             <h2>Our Story</h2>
             <p>
-              BIOFACTOR is a leading agricultural solutions company dedicated to providing premium 
+              One Health Center is a leading agricultural solutions company dedicated to providing premium 
               biofertilizers, organic fertilizers, and specialized agricultural products. We are committed 
               to sustainable farming practices and helping farmers achieve better yields through innovative 
               and eco-friendly solutions.
@@ -165,14 +165,14 @@ const About = () => {
               <span className="contact-icon">📧</span>
               <div>
                 <h4>Email</h4>
-                <p>admin@biofactor.in</p>
+                <p>admin@onehealthcenter.in</p>
               </div>
             </div>
             <div className="contact-item">
               <span className="contact-icon">🌐</span>
               <div>
                 <h4>Website</h4>
-                <p>www.biofactor.in</p>
+                <p>www.onehealthcenter.in</p>
               </div>
             </div>
           </div>

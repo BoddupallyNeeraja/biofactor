@@ -13,6 +13,9 @@ import Checkout from './components/Checkout';
 import OrderSuccess from './components/OrderSuccess';
 import About from './components/About';
 import Login from './components/Login';
+import FormalLogin from './components/FormalLogin';
+import DealerLogin from './components/DealerLogin';
+import AdminLogin from './components/AdminLogin';
 import Signup from './components/Signup';
 import './App.css';
 
@@ -34,6 +37,9 @@ function App() {
               <Route path="/order-success/:orderId" element={<OrderSuccess />} />
               <Route path="/about" element={<About />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/login/formal" element={<FormalLogin />} />
+              <Route path="/login/dealer" element={<DealerLogin />} />
+              <Route path="/login/admin" element={<AdminLogin />} />
               <Route path="/signup" element={<Signup />} />
               </Routes>
             </main>

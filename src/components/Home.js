@@ -21,7 +21,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1 className="hero-title">🌿 Welcome to BIOFACTOR</h1>
+          <h1 className="hero-title">🌿 Welcome to One Health Center</h1>
           <p className="hero-subtitle">Your trusted source for premium agricultural products</p>
           <p className="hero-description">
             Discover our comprehensive range of biofertilizers, organic fertilizers, chemical fertilizers, 

@@ -3,13 +3,12 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import './Auth.css';
 
-const Login = () => {
+const FormalLogin = () => {
   const navigate = useNavigate();
   const { signIn } = useAuth();
   const [formData, setFormData] = useState({
     email: '',
-    password: '',
-    userType: 'formal'
+    password: ''
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -28,7 +27,7 @@ const Login = () => {
     setError('');
 
     // Validation
-    if (!formData.email || !formData.password || !formData.userType) {
+    if (!formData.email || !formData.password) {
       setError('Please fill in all fields');
       setLoading(false);
       return;
@@ -36,7 +35,7 @@ const Login = () => {
 
     try {
       // Sign in with Supabase Auth
-      const result = await signIn(formData.email, formData.password, formData.userType);
+      const result = await signIn(formData.email, formData.password);
       
       if (result.success) {
         // Redirect to home page after successful login
@@ -62,7 +61,7 @@ const Login = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h2>Welcome Back!</h2>
+        <h2>Formal User Login</h2>
         <p className="auth-subtitle">Login to your One Health Center account</p>
         
         {error && <div className="error-message">{error}</div>}
@@ -94,22 +93,6 @@ const Login = () => {
             />
           </div>
           
-          <div className="form-group">
-            <label htmlFor="userType">User Type</label>
-            <select
-              id="userType"
-              name="userType"
-              value={formData.userType}
-              onChange={handleChange}
-              className="form-select"
-              required
-            >
-              <option value="formal">Formal User</option>
-              <option value="dealer">Dealer</option>
-              <option value="admin">Admin</option>
-            </select>
-          </div>
-          
           <button type="submit" className="auth-button" disabled={loading}>
             {loading ? 'Logging in...' : 'Login'}
           </button>
@@ -118,11 +101,13 @@ const Login = () => {
         <p className="auth-footer">
           Don't have an account? <Link to="/signup">Sign up here</Link>
         </p>
+        <p className="auth-footer" style={{ marginTop: '0.5rem' }}>
+          <Link to="/login/dealer">Dealer Login</Link> | <Link to="/login/admin">Admin Login</Link>
+        </p>
       </div>
     </div>
   );
 };
 
-export default Login;
-
+export default FormalLogin;
 

@@ -1,4 +1,4 @@
-# 🌿 BIOFACTOR - Organic Products Ecommerce Store
+# 🌿 One Health Center - Organic Products Ecommerce Store
 
 A modern, responsive ecommerce website for organic products built with React.
 
@@ -35,7 +35,7 @@ npm start
 ## Project Structure
 
 ```
-biofactor-project/
+one-health-center-project/
 ├── public/
 │   └── index.html
 ├── src/
@@ -63,14 +63,14 @@ biofactor-project/
 ## User Data Storage
 
 The application uses **localStorage** to store user registration and login data:
-- User accounts are stored in `biofactor_users` key
-- Current logged-in user is stored in `biofactor_currentUser` key
+- User accounts are stored in `onehealthcenter_users` key
+- Current logged-in user is stored in `onehealthcenter_currentUser` key
 - Data persists across browser sessions
 
 ### To view stored data:
 1. Open browser DevTools (F12)
 2. Go to Application tab → Local Storage
-3. Check `biofactor_users` for all registered users
+3. Check `onehealthcenter_users` for all registered users
 
 ## Available Scripts
 

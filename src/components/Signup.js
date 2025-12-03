@@ -10,7 +10,8 @@ const Signup = () => {
     name: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    userType: 'formal'
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -32,7 +33,7 @@ const Signup = () => {
     setSuccess('');
 
     // Validation
-    if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
+    if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword || !formData.userType) {
       setError('Please fill in all fields');
       setLoading(false);
       return;
@@ -52,7 +53,7 @@ const Signup = () => {
 
     // Sign up with Supabase Auth
     try {
-      const result = await signUp(formData.email, formData.password, formData.name);
+      const result = await signUp(formData.email, formData.password, formData.name, formData.userType);
       
       if (result.success) {
         setSuccess('Account created successfully! Please check your email to verify your account.');
@@ -81,7 +82,7 @@ const Signup = () => {
     <div className="auth-container">
       <div className="auth-card">
         <h2>Create Account</h2>
-        <p className="auth-subtitle">Join BIOFACTOR and discover organic goodness</p>
+        <p className="auth-subtitle">Join One Health Center and discover organic goodness</p>
         
         {error && <div className="error-message">{error}</div>}
         {success && <div className="success-message">{success}</div>}
@@ -137,6 +138,22 @@ const Signup = () => {
               placeholder="Re-enter your password"
               required
             />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="userType">User Type</label>
+            <select
+              id="userType"
+              name="userType"
+              value={formData.userType}
+              onChange={handleChange}
+              className="form-select"
+              required
+            >
+              <option value="formal">Formal User</option>
+              <option value="dealer">Dealer</option>
+              <option value="admin">Admin</option>
+            </select>
           </div>
           
           <button type="submit" className="auth-button" disabled={loading}>

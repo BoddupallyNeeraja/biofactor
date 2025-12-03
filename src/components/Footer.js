@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h3>🌿 BIOFACTOR</h3>
+          <h3>🌿 One Health Center</h3>
           <p>Your trusted source for organic products. Quality you can trust, nature you can believe in.</p>
         </div>
         
@@ -22,13 +22,13 @@ const Footer = () => {
         
         <div className="footer-section">
           <h4>Contact</h4>
-          <p>Email: info@biofactor.com</p>
+          <p>Email: info@onehealthcenter.com</p>
           <p>Phone: +1 (555) 123-4567</p>
         </div>
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; 2025 BIOFACTOR. All rights reserved.</p>
+        <p>&copy; 2025 One Health Center. All rights reserved.</p>
       </div>
     </footer>
   );

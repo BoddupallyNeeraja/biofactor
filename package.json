@@ -1,7 +1,7 @@
 {
-  "name": "biofactor-ecommerce",
+  "name": "one-health-center-ecommerce",
   "version": "1.0.0",
-  "description": "Organic Products Ecommerce Store - BIOFACTOR",
+  "description": "Organic Products Ecommerce Store - One Health Center",
   "private": true,
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",

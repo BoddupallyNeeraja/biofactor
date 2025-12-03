@@ -1,4 +1,4 @@
-// BIOFACTOR Products Data - Updated with Rupee Prices and Images
+// One Health Center Products Data - Updated with Rupee Prices and Images
 export const products = [
   // BIOFERTILIZERS (12 products)
   {

@@ -22,7 +22,7 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         <Link to="/" className="logo">
-          <h1>🌿 BIOFACTOR</h1>
+          <h1>🌿 One Health Center</h1>
         </Link>
         
         <nav className="nav">
