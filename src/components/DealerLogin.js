@@ -93,11 +93,11 @@ const DealerLogin = () => {
           
           <h2>Dealer Login</h2>
           <p className="dealer-login-description">Access your dealer dashboard to manage products, sales, and orders</p>
-          
-          {error && <div className="error-message">{error}</div>}
-          
+        
+        {error && <div className="error-message">{error}</div>}
+        
           <form onSubmit={handleSubmit} className="dealer-login-form">
-            <div className="form-group">
+          <div className="form-group">
               <label htmlFor="email">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -105,19 +105,19 @@ const DealerLogin = () => {
                 </svg>
                 Dealer Email
               </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="dealer@example.com"
-                required
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="dealer@example.com"
+              required
                 autoComplete="email"
-              />
-            </div>
-            
-            <div className="form-group">
+            />
+          </div>
+          
+          <div className="form-group">
               <label htmlFor="password">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -125,23 +125,23 @@ const DealerLogin = () => {
                 </svg>
                 Password
               </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                placeholder="Enter your password"
-                required
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Enter your password"
+              required
                 autoComplete="current-password"
-              />
-            </div>
-            
-            <button 
-              type="submit" 
+            />
+          </div>
+          
+          <button 
+            type="submit" 
               className="dealer-login-button" 
-              disabled={loading}
-            >
+            disabled={loading}
+          >
               {loading ? (
                 <>
                   <span className="spinner"></span>
@@ -155,9 +155,9 @@ const DealerLogin = () => {
                   </svg>
                 </>
               )}
-            </button>
-          </form>
-          
+          </button>
+        </form>
+        
           <div className="dealer-login-footer">
             <p>Don't have an account? <Link to="/signup">Sign up as Dealer</Link></p>
             <div className="dealer-login-links">

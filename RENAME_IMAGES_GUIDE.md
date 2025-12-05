@@ -89,3 +89,4 @@ Update the following image paths in `products.js`:
 2. SAMPOORNA LEVELS: Change `sampoorna.jpg` → `sampoorna-levels.jpg`
 
 
+

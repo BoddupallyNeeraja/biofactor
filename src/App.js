@@ -55,24 +55,24 @@ function App() {
           <div className="App">
             <AppLayout>
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/products/:id" element={<ProductDetail />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/order-success/:orderId" element={<OrderSuccess />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/login" element={<Login />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:id" element={<ProductDetail />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/order-success/:orderId" element={<OrderSuccess />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/login" element={<Login />} />
                 <Route path="/login/farmer" element={<FarmerLogin />} />
                 <Route path="/dealer/login" element={<DealerLogin />} />
-                <Route path="/login/dealer" element={<DealerLogin />} />
+              <Route path="/login/dealer" element={<DealerLogin />} />
                 <Route path="/dealer" element={<DealerPanel />} />
                 <Route path="/dealer/panel" element={<DealerPanel />} />
-                <Route path="/login/admin" element={<AdminLogin />} />
+              <Route path="/login/admin" element={<AdminLogin />} />
                 <Route path="/admin/dashboard" element={<AdminDashboard />} />
                 <Route path="/dealer/dashboard" element={<DealerDashboard />} />
                 <Route path="/farmer/dashboard" element={<FarmerDashboard />} />
-                <Route path="/signup" element={<Signup />} />
+              <Route path="/signup" element={<Signup />} />
               </Routes>
             </AppLayout>
           </div>

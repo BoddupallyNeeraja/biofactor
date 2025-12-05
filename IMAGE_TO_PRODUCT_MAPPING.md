@@ -706,3 +706,4 @@ This document maps the image descriptions you provided to the correct product fi
 - Once you add the actual image files, they will display automatically
 
 
+

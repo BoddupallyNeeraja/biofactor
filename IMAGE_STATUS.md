@@ -123,3 +123,4 @@ You need to:
 The image paths in `src/data/products.js` are already correctly configured. Once you add the actual image files, they will display automatically.
 
 
+
