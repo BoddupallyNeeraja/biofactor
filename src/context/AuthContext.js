@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
     return () => subscription.unsubscribe();
   }, []);
 
-  const signUp = async (email, password, name, userType = 'formal') => {
+  const signUp = async (email, password, name, userType = 'farmer') => {
     try {
       const { data, error } = await supabase.auth.signUp({
         email,
@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const signIn = async (email, password, userType = 'formal') => {
+  const signIn = async (email, password, userType = 'farmer') => {
     try {
       const { data, error } = await supabase.auth.signInWithPassword({
         email,

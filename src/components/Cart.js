@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import BackButton from './BackButton';
 import './Cart.css';
 
 const Cart = () => {
@@ -22,6 +23,7 @@ const Cart = () => {
     return (
       <div className="cart-page">
         <div className="cart-container">
+          <BackButton />
           <h1>Your Cart</h1>
           <div className="empty-cart">
             <div className="empty-cart-icon">🛒</div>
@@ -43,6 +45,7 @@ const Cart = () => {
   return (
     <div className="cart-page">
       <div className="cart-container">
+        <BackButton />
         <div className="cart-header">
           <h1>Your Cart ({cartItems.length} {cartItems.length === 1 ? 'item' : 'items'})</h1>
           {cartItems.length > 0 && (

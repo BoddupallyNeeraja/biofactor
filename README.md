@@ -1,6 +1,8 @@
-# 🌿 One Health Center - Organic Products Ecommerce Store
+# 🌿 BIOFACTOR - Organic Products Ecommerce Platform
 
-A modern, responsive ecommerce website for organic products built with React.
+A comprehensive agricultural solutions platform with specialized verticals. This application showcases **One Health Center** - a dedicated health-focused sub-brand within the BIOFACTOR ecosystem.
+
+A modern, responsive ecommerce website built with React.
 
 ## Features
 

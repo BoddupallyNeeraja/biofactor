@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import BackButton from './BackButton';
 import './Auth.css';
 
 const AdminLogin = () => {
@@ -35,11 +36,11 @@ const AdminLogin = () => {
 
     try {
       // Sign in with Supabase Auth
-      const result = await signIn(formData.email, formData.password);
+      const result = await signIn(formData.email, formData.password, 'admin');
       
       if (result.success) {
-        // Redirect to home page after successful login
-        navigate('/');
+        // Redirect to admin dashboard after successful login
+        navigate('/admin/dashboard');
       } else {
         // Handle specific error messages
         let errorMessage = result.error || 'Invalid email or password';
@@ -60,6 +61,7 @@ const AdminLogin = () => {
 
   return (
     <div className="auth-container">
+      <BackButton className="light admin" />
       <div className="auth-card" style={{ borderTop: '4px solid #d32f2f' }}>
         <h2 style={{ color: '#d32f2f' }}>Admin Login</h2>
         <p className="auth-subtitle">Access the admin dashboard</p>
@@ -106,7 +108,7 @@ const AdminLogin = () => {
         </form>
         
         <p className="auth-footer">
-          <Link to="/login/formal">Regular User Login</Link> | <Link to="/login/dealer">Dealer Login</Link>
+          <Link to="/login/farmer">Farmer Login</Link> | <Link to="/login/dealer">Dealer Login</Link>
         </p>
       </div>
     </div>

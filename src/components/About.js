@@ -1,30 +1,43 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import BackButton from './BackButton';
 import './About.css';
 
 const About = () => {
   return (
     <div className="about-page">
       <div className="about-container">
+        <BackButton />
         {/* Hero Section */}
         <section className="about-hero">
-          <h1>About One Health Center</h1>
+          <h1>About BIOFACTOR</h1>
           <p className="hero-subtitle">Transforming Agriculture Through Innovation</p>
+          <p className="brand-hierarchy">
+            <Link to="/products" className="sub-brand-badge clickable-sub-brand">One Health Center</Link> - A dedicated health-focused vertical within the BIOFACTOR platform
+          </p>
         </section>
 
         {/* Company Overview */}
         <section className="about-section">
           <div className="section-content">
-            <h2>Our Story</h2>
+            <h2>Our Platform</h2>
             <p>
-              One Health Center is a leading agricultural solutions company dedicated to providing premium 
-              biofertilizers, organic fertilizers, and specialized agricultural products. We are committed 
-              to sustainable farming practices and helping farmers achieve better yields through innovative 
-              and eco-friendly solutions.
+              <strong>BIOFACTOR</strong> is a comprehensive agricultural solutions platform dedicated to providing premium 
+              biofertilizers, organic fertilizers, and specialized agricultural products. As the main platform, 
+              BIOFACTOR serves as the foundation for multiple specialized verticals, each focused on specific aspects 
+              of agricultural and health solutions.
+            </p>
+            <h2>One Health Center - Our Health Vertical</h2>
+            <p>
+              <Link to="/products"><strong>One Health Center</strong></Link> is a dedicated sub-brand within the BIOFACTOR ecosystem, specifically 
+              focused on health-related agricultural products and services. As part of the BIOFACTOR family, One Health Center 
+              brings specialized expertise in health-focused solutions while leveraging the platform's extensive infrastructure, 
+              quality standards, and commitment to sustainable farming practices.
             </p>
             <p>
               With years of experience in the agricultural sector, we understand the challenges farmers face 
               and strive to provide effective, reliable, and affordable products that enhance crop quality 
-              and productivity while maintaining soil health.
+              and productivity while maintaining soil health and promoting overall agricultural wellness.
             </p>
           </div>
         </section>

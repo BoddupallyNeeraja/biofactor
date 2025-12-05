@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
+import BackButton from './BackButton';
 import './Products.css';
 
 const Products = () => {
@@ -33,6 +34,7 @@ const Products = () => {
   return (
     <div className="products-page">
       <div className="page-header">
+        <BackButton />
         <h1>Our Organic Products</h1>
         <p>Discover our wide range of premium organic products</p>
       </div>

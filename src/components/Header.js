@@ -22,13 +22,14 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         <Link to="/" className="logo">
-          <h1>🌿 One Health Center</h1>
+          <h1>🌿 BIOFACTOR</h1>
         </Link>
         
         <nav className="nav">
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/products" className="nav-link">Products</Link>
           <Link to="/about" className="nav-link">About Us</Link>
+          <Link to="/dealer" className="nav-link dealer-link">Dashboard</Link>
           
           {/* Cart Icon */}
           <Link to="/cart" className="cart-icon-wrapper">

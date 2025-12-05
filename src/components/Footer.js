@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -6,7 +7,10 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h3>🌿 One Health Center</h3>
+          <h3>🌿 BIOFACTOR</h3>
+          <p className="sub-brand-label">
+            <Link to="/products" className="sub-brand clickable-sub-brand">One Health Center</Link> - A BIOFACTOR Brand
+          </p>
           <p>Your trusted source for organic products. Quality you can trust, nature you can believe in.</p>
         </div>
         
@@ -28,7 +32,7 @@ const Footer = () => {
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; 2025 One Health Center. All rights reserved.</p>
+        <p>&copy; 2025 BIOFACTOR. All rights reserved.</p>
       </div>
     </footer>
   );

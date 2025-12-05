@@ -1,4 +1,4 @@
-// One Health Center Products Data - Updated with Rupee Prices and Images
+// BIOFACTOR Products Data - Updated with Rupee Prices and Images
 export const products = [
   // BIOFERTILIZERS (12 products)
   {
@@ -6,7 +6,7 @@ export const products = [
     name: 'AADHAARGOLD',
     price: 850,
     image: '/images/products/biofertilizers/aadhaargold.jpg',
-    description: 'Premium biofertilizer formulation for enhanced plant growth and soil health.',
+    description: 'Foundation Granules Biofertilizer. Early establishment of crop, enhances crop vigour, disease tolerance, protects against drought stress, improves absorption of available nutrients, increases number of tillers and branches, contributes to healthy crop bumper yield.',
     category: 'BIOFERTILIZERS',
     inStock: true
   },
@@ -14,7 +14,7 @@ export const products = [
     id: 2,
     name: 'BIOTRIPLE ACTION PROGRAME',
     price: 920,
-    image: '/images/products/biofertilizers/biotriple-action.jpg',
+    image: '/images/products/biofertilizers/triple-action-programme.jpg',
     description: 'Triple action biofertilizer program for comprehensive plant nutrition and protection.',
     category: 'BIOFERTILIZERS',
     inStock: true
@@ -23,7 +23,7 @@ export const products = [
     id: 3,
     name: 'BIO DOUBLE ACTION PROGARAME',
     price: 780,
-    image: '/images/products/biofertilizers/bio-double-action.jpg',
+    image: '/images/products/biofertilizers/double-action-programme.jpg',
     description: 'Double action biofertilizer program for improved crop yield and soil fertility.',
     category: 'BIOFERTILIZERS',
     inStock: true
@@ -32,7 +32,7 @@ export const products = [
     id: 4,
     name: 'BIO POTASH',
     price: 650,
-    image: '/images/products/biofertilizers/bio-potash.jpg',
+    image: '/images/products/biofertilizers/potash.jpg',
     description: 'Organic potash biofertilizer for potassium supplementation in crops.',
     category: 'BIOFERTILIZERS',
     inStock: true
@@ -41,7 +41,7 @@ export const products = [
     id: 5,
     name: 'G-VAM | G-VAM -PSF',
     price: 750,
-    image: '/images/products/biofertilizers/gvam.jpg',
+    image: '/images/products/biofertilizers/g-vam.jpg',
     description: 'Advanced G-VAM biofertilizer with PSF technology for better root development.',
     category: 'BIOFERTILIZERS',
     inStock: true
@@ -152,7 +152,7 @@ export const products = [
     name: 'BELOM-S1 - Vegetative Stage',
     price: 890,
     image: '/images/products/organic/belom-s1.jpg',
-    description: 'Release the Genetic Potential. Special micronutrients for vegetative stage. Promotes strong root system, stem, more branches and increased chlorophyll growth.',
+    description: 'Release the Genetic Potential. Special micronutrients for vegetative stage. High efficacy & performance, controlled release of nutrients, ameliorate solubility & dispersion, enhanced bioavailability, persist for longer duration. Bigger yields, less nutrient loss, healthier soils. Certified Organic Product - 5 Liters.',
     category: 'ORGANIC FERTILIZERS',
     inStock: true
   },
@@ -161,7 +161,7 @@ export const products = [
     name: 'BELOM-S2 - Flowering Stage',
     price: 920,
     image: '/images/products/organic/belom-s2.jpg',
-    description: 'Release the Genetic Potential. Special micronutrients for flowering stage. Helps in healthy flowering and more fruit setting.',
+    description: 'Release the Genetic Potential. Special micronutrients for flowering stage. High efficacy & performance, controlled release of nutrients, ameliorate solubility & dispersion, enhanced bioavailability, persist for longer duration. Bigger yields, less nutrient loss, healthier soils. Certified Organic Product - 5 Liters.',
     category: 'ORGANIC FERTILIZERS',
     inStock: true
   },
@@ -170,7 +170,7 @@ export const products = [
     name: 'BELOM-S3 - Fruiting Stage',
     price: 950,
     image: '/images/products/organic/belom-s3.jpg',
-    description: 'Release the Genetic Potential. Special micronutrients for fruiting stage. Helps prevent fruit drop, produces more fruits, and increases fruit weight.',
+    description: 'Release the Genetic Potential. Special micronutrients for fruiting stage. High efficacy & performance, controlled release of nutrients, ameliorate solubility & dispersion, enhanced bioavailability, persist for longer duration. Bigger yields, less nutrient loss, healthier soils. Certified Organic Product - 5 Liters.',
     category: 'ORGANIC FERTILIZERS',
     inStock: true
   },
@@ -179,7 +179,7 @@ export const products = [
     name: 'SUMCA',
     price: 720,
     image: '/images/products/organic/sumca.jpg',
-    description: 'Organic fertilizer for enhanced crop yield and soil health.',
+    description: 'Bio Enriched Organic Manure. Recommended for: Cotton, Maize, Chilli, Paddy, Groundnut, Onion, Bengal Gram, Red Gram, Fruits & Other Vegetable Crops. Premium organic fertilizer for enhanced crop yield and soil health.',
     category: 'ORGANIC FERTILIZERS',
     inStock: true
   },
@@ -188,7 +188,7 @@ export const products = [
     name: 'PROMOTE',
     price: 680,
     image: '/images/products/organic/promote.jpg',
-    description: 'Organic growth promoter for improved plant development.',
+    description: 'Phosphate Rich Organic Manure. Recommended for: Cotton, Maize, Chilli, Paddy, Groundnut, Onion, Bengal Gram, Red Gram, Fruits & Other Vegetable Crops. Organic growth promoter for improved plant development.',
     category: 'ORGANIC FERTILIZERS',
     inStock: true
   },
@@ -217,7 +217,7 @@ export const products = [
     name: 'ZINCUM',
     price: 620,
     image: '/images/products/chemical/zincum.jpg',
-    description: 'Zinc-enriched chemical fertilizer for addressing zinc deficiencies.',
+    description: 'Chelated Zinc chemical fertilizer for addressing zinc deficiencies.',
     category: 'CHEMICAL FERTILIZERS',
     inStock: true
   },
@@ -226,7 +226,7 @@ export const products = [
     name: 'CAMBO',
     price: 590,
     image: '/images/products/chemical/cambo.jpg',
-    description: 'Balanced chemical fertilizer for comprehensive crop nutrition.',
+    description: 'Balanced chemical fertilizer for comprehensive crop nutrition. Proactive, science-based and balanced nutrient plan.',
     category: 'CHEMICAL FERTILIZERS',
     inStock: true
   },
@@ -244,7 +244,7 @@ export const products = [
     name: 'MAGNI5',
     price: 560,
     image: '/images/products/chemical/magni5.jpg',
-    description: 'Magnesium-enriched fertilizer for improved chlorophyll production.',
+    description: 'Magnesium hydroxide and zinc phosphate. Micro encapsulated nutrient concentration designed to resolve magnesium deficiency in crops.',
     category: 'CHEMICAL FERTILIZERS',
     inStock: true
   },
@@ -253,7 +253,7 @@ export const products = [
     name: 'TRUMIN',
     price: 610,
     image: '/images/products/chemical/trumin.jpg',
-    description: 'Multi-nutrient chemical fertilizer for balanced plant nutrition.',
+    description: 'Micro encapsulated 30.5% manganese sulphate concentration designed for manganese deficiency in crops.',
     category: 'CHEMICAL FERTILIZERS',
     inStock: true
   },
@@ -271,7 +271,7 @@ export const products = [
     name: 'FLOWMIN SERIES',
     price: 680,
     image: '/images/products/chemical/flowmin-series.jpg',
-    description: 'Premium flowable mineral fertilizer series for efficient nutrient delivery.',
+    description: 'Premium flowable mineral fertilizer series for efficient nutrient delivery. Liquid Fertilizer for foliar application and drip irrigation.',
     category: 'CHEMICAL FERTILIZERS',
     inStock: true
   },
@@ -280,7 +280,7 @@ export const products = [
     name: 'SAMPOORNA LEVELS',
     price: 750,
     image: '/images/products/chemical/sampoorna-levels.jpg',
-    description: 'Complete nutrition levels for comprehensive plant health.',
+    description: 'Complete nutrition levels for comprehensive plant health. New Generation Foliar Liquid Fertilizer with NPK ratios.',
     category: 'CHEMICAL FERTILIZERS',
     inStock: true
   },
@@ -298,7 +298,7 @@ export const products = [
     name: 'DFNDR',
     price: 710,
     image: '/images/products/chemical/dfndr.jpg',
-    description: 'Defense-oriented fertilizer for plant protection and growth.',
+    description: 'Liquid Microbial Consortia For Plant Nutrition. Defense-oriented fertilizer for plant protection and growth.',
     category: 'CHEMICAL FERTILIZERS',
     inStock: true
   },
@@ -536,7 +536,7 @@ export const products = [
     name: 'AGRISEAL',
     price: 980,
     image: '/images/products/special/agriseal.jpg',
-    description: 'Special sealing and protection product for agricultural applications.',
+    description: 'Immunomodulator Stress Buster. Special sealing and protection product for agricultural applications. Advanced formulation for plant health and stress management.',
     category: 'SPECIAL PRODUCTS',
     inStock: true
   },
@@ -545,7 +545,7 @@ export const products = [
     name: 'BOC',
     price: 920,
     image: '/images/products/special/boc.jpg',
-    description: 'Premium special product for advanced crop management and protection.',
+    description: 'BIO ORGANIC CARBON. Natural Liquid Organic Fertilizer. An incitive save soil health program.',
     category: 'SPECIAL PRODUCTS',
     inStock: true
   },
@@ -553,8 +553,8 @@ export const products = [
     id: 61,
     name: 'ELIXER',
     price: 950,
-    image: '/images/products/special/elixer.jpg',
-    description: 'Elixir formulation for enhanced plant vitality and stress resistance.',
+    image: '/images/products/special/elixir.jpg',
+    description: 'Elixir formulation for enhanced plant vitality and stress resistance. Available in Cotton Special and Chilli Special variants.',
     category: 'SPECIAL PRODUCTS',
     inStock: true
   },
@@ -574,7 +574,7 @@ export const products = [
     name: 'NATIVENEEM',
     price: 890,
     image: '/images/products/cib/native-neem.jpg',
-    description: 'Natural neem-based CIB product for organic pest and disease control.',
+    description: 'Neem Seed Kernel based E.C. Containing Azadirachtin 1% (10000 PPM) W/W Min. A Novel Botanical Insecticide.',
     category: 'CIB PRODUCT',
     inStock: true
   },
@@ -583,7 +583,7 @@ export const products = [
     name: 'NEEM SANJEEVANI',
     price: 850,
     image: '/images/products/cib/neem-sanjeevani.jpg',
-    description: 'Neem-based life-giving formulation for plant health and protection.',
+    description: 'Neem Oil Based EC Containing Azadirachtin 0.03% (300 PPM) Min. Insecticide. Neem-based life-giving formulation for plant health and protection.',
     category: 'CIB PRODUCT',
     inStock: true
   },
@@ -592,7 +592,7 @@ export const products = [
     name: 'PENTAZIA',
     price: 980,
     image: '/images/products/cib/pentazia.jpg',
-    description: 'Five-action CIB product for comprehensive crop management.',
+    description: 'Liquid Consortia. Five-action CIB product for comprehensive crop management. Useful for all crops.',
     category: 'CIB PRODUCT',
     inStock: true
   },
@@ -610,7 +610,7 @@ export const products = [
     name: 'DFUSE',
     price: 860,
     image: '/images/products/cib/dfuse.jpg',
-    description: 'Diffusion-based CIB product for effective nutrient and protection delivery.',
+    description: 'Liquid consortia. Diffusion-based CIB product for effective nutrient and protection delivery.',
     category: 'CIB PRODUCT',
     inStock: true
   },
@@ -619,7 +619,7 @@ export const products = [
     name: 'NEMATOFF',
     price: 940,
     image: '/images/products/cib/nematoff.jpg',
-    description: 'Nematode control CIB product for healthy root systems.',
+    description: 'Biologically Derived Nematode Solution. Helps farmers manage nematode problems in soils. MAMSP Technology.',
     category: 'CIB PRODUCT',
     inStock: true
   }

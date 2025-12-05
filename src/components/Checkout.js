@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { supabase } from '../utils/supabaseClient';
+import BackButton from './BackButton';
 import './Checkout.css';
 
 const Checkout = () => {
@@ -158,6 +159,7 @@ const Checkout = () => {
   return (
     <div className="checkout-page">
       <div className="checkout-container">
+        <BackButton customPath="/cart" customLabel="Back to Cart" />
         <div className="checkout-header">
           <Link to="/cart" className="back-link">← Back to Cart</Link>
           <h1>Checkout</h1>

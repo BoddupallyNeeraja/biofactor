@@ -35,11 +35,11 @@ const FormalLogin = () => {
 
     try {
       // Sign in with Supabase Auth
-      const result = await signIn(formData.email, formData.password);
+      const result = await signIn(formData.email, formData.password, 'farmer');
       
       if (result.success) {
-        // Redirect to home page after successful login
-        navigate('/');
+        // Redirect to farmer dashboard after successful login
+        navigate('/farmer/dashboard');
       } else {
         // Handle specific error messages
         let errorMessage = result.error || 'Invalid email or password';
@@ -61,8 +61,9 @@ const FormalLogin = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h2>Formal User Login</h2>
-        <p className="auth-subtitle">Login to your One Health Center account</p>
+        <h2>🌾 Farmer Login</h2>
+        <p className="auth-subtitle">Login to your BIOFACTOR account</p>
+        <p className="auth-brand-note">Accessing <span className="sub-brand">One Health Center</span> services</p>
         
         {error && <div className="error-message">{error}</div>}
         

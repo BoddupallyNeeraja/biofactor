@@ -29,6 +29,28 @@
   animation: fadeInUp 0.8s ease 0.2s both;
 }
 
+.sub-brand {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  color: #ffffff;
+}
+
+.clickable-sub-brand {
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.clickable-sub-brand:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
 .hero-description {
   font-size: 1.1rem;
   line-height: 1.8;
@@ -381,6 +403,100 @@
 
   .product-card {
     padding: 1rem;
+  }
+}
+
+/* Dealer Panel Section */
+.dealer-panel-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+}
+
+.dealer-panel-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.dealer-panel-card-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.dealer-panel-card-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.dealer-panel-card h2 {
+  color: #2d5016;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.dealer-panel-card p {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.dealer-panel-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(255, 152, 0, 0.3);
+}
+
+.dealer-panel-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 152, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .dealer-panel-section {
+    padding: 2rem 1rem;
+  }
+
+  .dealer-panel-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .dealer-panel-card h2 {
+    font-size: 2rem;
+  }
+
+  .dealer-panel-card p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dealer-panel-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .dealer-panel-card-icon {
+    font-size: 3rem;
+  }
+
+  .dealer-panel-card h2 {
+    font-size: 1.75rem;
+  }
+
+  .dealer-panel-button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
   }
 
   .product-image {

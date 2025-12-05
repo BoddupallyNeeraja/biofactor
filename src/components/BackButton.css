@@ -1,0 +1,104 @@
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, #2d5016 0%, #4a7c2f 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(45, 80, 22, 0.2);
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 80, 22, 0.3);
+  background: linear-gradient(135deg, #4a7c2f 0%, #2d5016 100%);
+}
+
+.back-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(45, 80, 22, 0.2);
+}
+
+.back-button svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.back-button:hover svg {
+  transform: translateX(-3px);
+}
+
+.back-button span {
+  line-height: 1;
+}
+
+/* Variant for light backgrounds */
+.back-button.light {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8f0f5 100%);
+  color: #2d5016;
+  border: 2px solid #2d5016;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.back-button.light:hover {
+  background: linear-gradient(135deg, #e8f0f5 0%, #f5f7fa 100%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Variant for orange/dealer theme */
+.back-button.orange {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.2);
+}
+
+.back-button.orange:hover {
+  background: linear-gradient(135deg, #f57c00 0%, #ff9800 100%);
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.3);
+}
+
+/* Variant for admin theme */
+.back-button.admin {
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  box-shadow: 0 4px 15px rgba(25, 118, 210, 0.2);
+}
+
+.back-button.admin:hover {
+  background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%);
+  box-shadow: 0 6px 20px rgba(25, 118, 210, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .back-button {
+    padding: 0.625rem 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .back-button svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-button {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.85rem;
+  }
+
+  .back-button svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { supabase } from '../utils/supabaseClient';
+import BackButton from './BackButton';
 import './OrderSuccess.css';
 
 const OrderSuccess = () => {
@@ -73,6 +74,7 @@ const OrderSuccess = () => {
   return (
     <div className="order-success-page">
       <div className="order-success-container">
+        <BackButton customPath="/products" customLabel="Continue Shopping" />
         <div className="success-icon">✓</div>
         <h1>Order Placed Successfully!</h1>
         <p className="success-message">

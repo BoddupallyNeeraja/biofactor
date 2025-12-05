@@ -32,6 +32,48 @@
   font-weight: 500;
 }
 
+.brand-hierarchy {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sub-brand-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 1.2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-right: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.clickable-sub-brand {
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.clickable-sub-brand:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+.section-content a {
+  color: #2d5016;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.section-content a:hover {
+  color: #3d6b1f;
+  text-decoration: underline;
+}
+
 /* About Sections */
 .about-section {
   background: white;

@@ -29,6 +29,34 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
+.sub-brand-label {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sub-brand {
+  display: inline-block;
+  background: rgba(168, 224, 99, 0.2);
+  padding: 0.2rem 0.75rem;
+  border-radius: 15px;
+  font-weight: 600;
+  color: #a8e063;
+}
+
+.clickable-sub-brand {
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.clickable-sub-brand:hover {
+  background: rgba(168, 224, 99, 0.3);
+  transform: scale(1.05);
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .footer-section ul {
   list-style: none;
 }

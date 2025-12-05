@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import BackButton from './BackButton';
 import './Auth.css';
 
 const Signup = () => {
@@ -11,7 +12,7 @@ const Signup = () => {
     email: '',
     password: '',
     confirmPassword: '',
-    userType: 'formal'
+    userType: 'farmer'
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -80,9 +81,11 @@ const Signup = () => {
 
   return (
     <div className="auth-container">
+      <BackButton className="light" />
       <div className="auth-card">
         <h2>Create Account</h2>
-        <p className="auth-subtitle">Join One Health Center and discover organic goodness</p>
+        <p className="auth-subtitle">Join BIOFACTOR and discover organic goodness</p>
+        <p className="auth-brand-note">Signing up for <span className="sub-brand">One Health Center</span> services</p>
         
         {error && <div className="error-message">{error}</div>}
         {success && <div className="success-message">{success}</div>}
@@ -150,7 +153,7 @@ const Signup = () => {
               className="form-select"
               required
             >
-              <option value="formal">Formal User</option>
+              <option value="farmer">Farmer</option>
               <option value="dealer">Dealer</option>
               <option value="admin">Admin</option>
             </select>

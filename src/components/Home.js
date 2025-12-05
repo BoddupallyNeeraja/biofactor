@@ -21,8 +21,10 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1 className="hero-title">🌿 Welcome to One Health Center</h1>
-          <p className="hero-subtitle">Your trusted source for premium agricultural products</p>
+          <h1 className="hero-title">🌿 Welcome to BIOFACTOR</h1>
+          <p className="hero-subtitle">
+            <Link to="/products" className="sub-brand clickable-sub-brand">One Health Center</Link> - Your trusted source for premium agricultural products
+          </p>
           <p className="hero-description">
             Discover our comprehensive range of biofertilizers, organic fertilizers, chemical fertilizers, 
             and specialty products. Quality solutions for enhanced crop yield and sustainable farming.
@@ -82,6 +84,25 @@ const Home = () => {
           </div>
           <div className="section-footer">
             <Link to="/products" className="view-all-button">View All Products</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Dashboard Section */}
+      <section className="dealer-panel-section">
+        <div className="section-container">
+          <div className="dealer-panel-card">
+            <div className="dealer-panel-card-content">
+              <div className="dealer-panel-card-icon">🏪</div>
+              <h2>Dashboard</h2>
+              <p>
+                This section opens the dedicated Dashboard, where the dealer can securely access their dashboard, 
+                view sold products, manage listings, and track sales. Only authenticated dealers can enter this area.
+              </p>
+              <Link to="/dealer" className="dealer-panel-button">
+                Access Dashboard →
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
+import BackButton from './BackButton';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -27,6 +28,7 @@ const ProductDetail = () => {
     return (
       <div className="product-detail">
         <div className="not-found">
+          <BackButton />
           <h2>Product not found</h2>
           <Link to="/products">Back to Products</Link>
         </div>
@@ -58,9 +60,7 @@ const ProductDetail = () => {
   return (
     <div className="product-detail">
       <div className="detail-container">
-        <button onClick={() => navigate(-1)} className="back-button">
-          ← Back
-        </button>
+        <BackButton />
 
         <div className="detail-content">
           <div className="product-image-large">
